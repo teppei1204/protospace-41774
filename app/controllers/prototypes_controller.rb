@@ -66,3 +66,9 @@ end
       redirect_to new_user_session_path
     end
   end
+
+  def authorize_user
+    unless current_user == @prototype.user
+      redirect_to root_path
+    end
+  end
